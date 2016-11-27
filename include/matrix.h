@@ -1,3 +1,10 @@
+#ifndef MATRIX_H_
+#define MATRIX_H_
+
+
+#include "error.h"
+
+
 #include <algorithm>
 #include <istream>
 #include <limits>
@@ -34,7 +41,7 @@ struct Array {
         } else {
             copyKind = cudaMemcpyHostToDevice;
         }
-        cudaMemcpy(data, other.data, size, copyKind);
+        CHECK(cudaMemcpy(data, other.data, size * sizeof(E), copyKind));
     }
 
     void copy(const Array<E, DataDev> &other)
@@ -46,7 +53,7 @@ struct Array {
         } else {
             copyKind = cudaMemcpyDeviceToDevice;
         }
-        cudaMemcpy(data, other.data, size, copyKind);
+        CHECK(cudaMemcpy(data, other.data, size * sizeof(E), copyKind));
     }
 
     ~Array() { destroy(); }
@@ -62,7 +69,7 @@ struct Array {
         if (location == DataHost) {
             data = new E[size];
         } else {
-            cudaMalloc(&data, sizeof(E) * size);
+            CHECK(cudaMalloc(&data, sizeof(E) * size));
         }
     }
 
@@ -121,6 +128,7 @@ struct CsrMatrix {
     Array<int, location> col_idx;
     Array<E, location> val;
 };
+
 
 namespace {
 
@@ -184,7 +192,8 @@ void read_mtx(std::istream &is, CsrMatrix<E, DataHost> *matrix)
 
 
 template <typename E>
-std::ostream& operator <<(std::ostream &os, CsrMatrix<E, DataHost> &matrix)
+std::ostream& operator <<(
+        std::ostream &os, const CsrMatrix<E, DataHost> &matrix)
 {
     for (int r = 0; r < matrix.n_rows; ++r) {
         int pos = matrix.row_ptr[r];
@@ -201,4 +210,35 @@ std::ostream& operator <<(std::ostream &os, CsrMatrix<E, DataHost> &matrix)
     }
     return os;
 }
+
+
+template <typename E>
+std::ostream& operator <<(
+        std::ostream &os, const CsrMatrix<E, DataDev> &matrix)
+{
+    CsrMatrix<E, DataHost> hm = matrix;
+    return os << hm;
+}
+
+
+template <typename E>
+std::ostream& operator <<(
+        std::ostream &os, const Array<E, DataHost> &arr)
+{
+    for (int i = 0; i < arr.size; ++i) {
+        os << arr[i] << '\n';
+    }
+    return os;
+}
+
+
+template <typename E>
+std::ostream& operator <<(
+        std::ostream &os, const Array<E, DataDev> &arr)
+{
+    Array<E, DataHost> harr = arr;
+    return os << harr;
+}
+
+#endif  // MATRIX_H_
 
