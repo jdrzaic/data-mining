@@ -1,0 +1,40 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+A	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^    const CsrMatrix<real, DataDev> A;$/;"	m	language:C++	struct:__anon1::pagerank_spmv	file:
+alg	/home/gflegar/repos/data-mining/src/main.cpp	/^    } alg;$/;"	m	language:C++	struct:arguments	typeref:enum:arguments::__anon1	file:
+AlgArnoldi	/home/gflegar/repos/data-mining/src/main.cpp	/^        AlgArnoldi$/;"	e	language:C++	enum:arguments::__anon1	file:
+AlgPower	/home/gflegar/repos/data-mining/src/main.cpp	/^        AlgPower,$/;"	e	language:C++	enum:arguments::__anon1	file:
+alpha	/home/gflegar/repos/data-mining/src/main.cpp	/^    real alpha;$/;"	m	language:C++	struct:arguments	file:
+alpha	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^    real alpha;$/;"	m	language:C++	struct:__anon1::pagerank_spmv	file:
+argp	/home/gflegar/repos/data-mining/src/main.cpp	/^static struct argp argp = { options, parse_opt, args_doc, doc };$/;"	v	language:C++	typeref:struct:argp	file:
+argp_program_bug_address	/home/gflegar/repos/data-mining/src/main.cpp	/^const char *argp_program_bug_address = "<jdrzaic@student.math.hr>";$/;"	v	language:C++
+argp_program_version	/home/gflegar/repos/data-mining/src/main.cpp	/^const char *argp_program_version = "pr 0.1";$/;"	v	language:C++
+args_doc	/home/gflegar/repos/data-mining/src/main.cpp	/^static char args_doc[] = "FILE";$/;"	v	language:C++	file:
+arguments	/home/gflegar/repos/data-mining/src/main.cpp	/^    arguments()$/;"	f	language:C++	struct:arguments
+arguments	/home/gflegar/repos/data-mining/src/main.cpp	/^struct arguments {$/;"	s	language:C++	file:
+cg	/home/gflegar/repos/data-mining/src/cg.cpp	/^int cg(const CsrMatrix<double, DataHost> &A, eltype *b, eltype *x, eltype tol,$/;"	f	language:C++
+copy	/home/gflegar/repos/data-mining/src/cg.cpp	/^void copy(int n, eltype *x, eltype *y)$/;"	f	language:C++
+ctx	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^    context ctx;$/;"	m	language:C++	struct:__anon1::pagerank_spmv	file:
+d	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^    Array<real, DataDev> d;$/;"	m	language:C++	struct:__anon1::pagerank_spmv	file:
+doc	/home/gflegar/repos/data-mining/src/main.cpp	/^static char doc[] =$/;"	v	language:C++	file:
+dot	/home/gflegar/repos/data-mining/src/cg.cpp	/^eltype dot(int n, eltype *x, eltype *y)$/;"	f	language:C++
+e	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^    Array<real, DataDev> e;$/;"	m	language:C++	struct:__anon1::pagerank_spmv	file:
+eltype	/home/gflegar/repos/data-mining/src/cg.cpp	/^typedef double eltype;$/;"	t	language:C++	file:
+filename	/home/gflegar/repos/data-mining/src/main.cpp	/^    const char *filename;$/;"	m	language:C++	struct:arguments	file:
+get_krylov_subspace	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^int get_krylov_subspace(cublasHandle_t handle,$/;"	f	language:C++	namespace:__anon1
+get_pagerank_vector_arnoldi	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^void get_pagerank_vector_arnoldi($/;"	f	language:C++
+get_pagerank_vector_power	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^void get_pagerank_vector_power($/;"	f	language:C++
+main	/home/gflegar/repos/data-mining/src/cg.cpp	/^int main(int argc, char *argv[])$/;"	f	language:C++
+main	/home/gflegar/repos/data-mining/src/main.cpp	/^int main(int argc, char *argv[])$/;"	f	language:C++
+main	/home/gflegar/repos/data-mining/src/nrm.cpp	/^int main() {$/;"	f	language:C++
+max_iters	/home/gflegar/repos/data-mining/src/main.cpp	/^    int max_iters;$/;"	m	language:C++	struct:arguments	file:
+normalize	/home/gflegar/repos/data-mining/src/nrm.cpp	/^void normalize(CsrMatrix<double, DataHost>& A) {$/;"	f	language:C++
+operator ()	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^    void operator ()(real *x, real *y) const$/;"	f	language:C++	struct:__anon1::pagerank_spmv
+options	/home/gflegar/repos/data-mining/src/main.cpp	/^static struct argp_option options[] = {$/;"	v	language:C++	typeref:struct:argp_option	file:
+pagerank_spmv	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^    pagerank_spmv(context ctx_, const CsrMatrix<real, DataHost> &hA,$/;"	f	language:C++	struct:__anon1::pagerank_spmv
+pagerank_spmv	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^struct pagerank_spmv {$/;"	s	language:C++	namespace:__anon1	file:
+parse_opt	/home/gflegar/repos/data-mining/src/main.cpp	/^static error_t parse_opt(int key, char *arg, struct argp_state *state)$/;"	f	language:C++	file:
+scale_matrix	/home/gflegar/repos/data-mining/src/page_rank.cpp	/^void scale_matrix(CsrMatrix<real, DataHost> *A)$/;"	f	language:C++	namespace:__anon1
+spmv	/home/gflegar/repos/data-mining/src/cg.cpp	/^void spmv(const CsrMatrix<double, DataHost> &A, eltype *x, eltype *y)$/;"	f	language:C++
+subspace_dim	/home/gflegar/repos/data-mining/src/main.cpp	/^    int subspace_dim;$/;"	m	language:C++	struct:arguments	file:
+tol	/home/gflegar/repos/data-mining/src/main.cpp	/^    real tol;$/;"	m	language:C++	struct:arguments	file:
+waxpby	/home/gflegar/repos/data-mining/src/cg.cpp	/^void waxpby(int n, eltype alpha, eltype *x, eltype beta, eltype *y, eltype *w)$/;"	f	language:C++

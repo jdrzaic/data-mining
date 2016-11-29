@@ -1,0 +1,43 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+Array	/home/gflegar/repos/data-mining/include/matrix.h	/^    Array() : size(0), data(nullptr) {}$/;"	f	language:C++	struct:Array
+Array	/home/gflegar/repos/data-mining/include/matrix.h	/^    Array(const Array<E, l> &other) : size(0), data(nullptr) { copy(other); }$/;"	f	language:C++	struct:Array
+Array	/home/gflegar/repos/data-mining/include/matrix.h	/^struct Array {$/;"	s	language:C++
+col	/home/gflegar/repos/data-mining/include/matrix.h	/^    int col;$/;"	m	language:C++	struct:__anon1::coord
+cols	/home/gflegar/repos/data-mining/include/matrix.h	/^    int cols() const { return n_cols; }$/;"	f	language:C++	struct:CsrMatrix
+col_idx	/home/gflegar/repos/data-mining/include/matrix.h	/^    Array<int, location> col_idx;$/;"	m	language:C++	struct:CsrMatrix
+coord	/home/gflegar/repos/data-mining/include/matrix.h	/^    coord(int row = 0, int col = 0, E val = E(0))$/;"	f	language:C++	struct:__anon1::coord
+coord	/home/gflegar/repos/data-mining/include/matrix.h	/^struct coord {$/;"	s	language:C++	namespace:__anon1
+copy	/home/gflegar/repos/data-mining/include/matrix.h	/^    void copy(const Array<E, DataDev> &other)$/;"	f	language:C++	struct:Array
+copy	/home/gflegar/repos/data-mining/include/matrix.h	/^    void copy(const Array<E, DataHost> &other)$/;"	f	language:C++	struct:Array
+CsrMatrix	/home/gflegar/repos/data-mining/include/matrix.h	/^    CsrMatrix() : n_rows(0), n_cols(0) {}$/;"	f	language:C++	struct:CsrMatrix
+CsrMatrix	/home/gflegar/repos/data-mining/include/matrix.h	/^    CsrMatrix(const CsrMatrix<E, l> &other)$/;"	f	language:C++	struct:CsrMatrix
+CsrMatrix	/home/gflegar/repos/data-mining/include/matrix.h	/^struct CsrMatrix {$/;"	s	language:C++
+data	/home/gflegar/repos/data-mining/include/matrix.h	/^    E *data;$/;"	m	language:C++	struct:Array
+DataDev	/home/gflegar/repos/data-mining/include/matrix.h	/^    DataDev$/;"	e	language:C++	enum:data_location_t
+DataHost	/home/gflegar/repos/data-mining/include/matrix.h	/^    DataHost,$/;"	e	language:C++	enum:data_location_t
+data_location_t	/home/gflegar/repos/data-mining/include/matrix.h	/^enum data_location_t {$/;"	g	language:C++
+destroy	/home/gflegar/repos/data-mining/include/matrix.h	/^    void destroy()$/;"	f	language:C++	struct:Array
+init	/home/gflegar/repos/data-mining/include/matrix.h	/^    void init(int rows, int cols, int nzeros)$/;"	f	language:C++	struct:CsrMatrix
+init	/home/gflegar/repos/data-mining/include/matrix.h	/^    void init(int size_)$/;"	f	language:C++	struct:Array
+insert_data	/home/gflegar/repos/data-mining/include/matrix.h	/^void insert_data(const std::vector<coord<E>> &data,$/;"	f	language:C++	namespace:__anon1
+MATRIX_H_	/home/gflegar/repos/data-mining/include/matrix.h	2;"	d	language:C++
+nnz	/home/gflegar/repos/data-mining/include/matrix.h	/^    int nnz() const { return val.size; }$/;"	f	language:C++	struct:CsrMatrix
+n_cols	/home/gflegar/repos/data-mining/include/matrix.h	/^    int n_cols;$/;"	m	language:C++	struct:CsrMatrix
+n_rows	/home/gflegar/repos/data-mining/include/matrix.h	/^    int n_rows;$/;"	m	language:C++	struct:CsrMatrix
+operator <<	/home/gflegar/repos/data-mining/include/matrix.h	/^std::ostream& operator <<($/;"	f	language:C++
+operator <<	/home/gflegar/repos/data-mining/include/matrix.h	/^std::ostream& operator <<($/;"	f	language:C++
+operator <<	/home/gflegar/repos/data-mining/include/matrix.h	/^std::ostream& operator <<($/;"	f	language:C++
+operator <<	/home/gflegar/repos/data-mining/include/matrix.h	/^std::ostream& operator <<($/;"	f	language:C++
+operator =	/home/gflegar/repos/data-mining/include/matrix.h	/^    Array& operator =(const Array<E, l> &other) { copy(other); return *this; }$/;"	f	language:C++	struct:Array
+operator =	/home/gflegar/repos/data-mining/include/matrix.h	/^    CsrMatrix& operator= (const CsrMatrix<E, l> &other)$/;"	f	language:C++	struct:CsrMatrix
+operator []	/home/gflegar/repos/data-mining/include/matrix.h	/^    E operator [](int idx) const { return data[idx]; }$/;"	f	language:C++	struct:Array
+operator []	/home/gflegar/repos/data-mining/include/matrix.h	/^    E& operator [](int idx) { return data[idx]; }$/;"	f	language:C++	struct:Array
+read_mtx	/home/gflegar/repos/data-mining/include/matrix.h	/^void read_mtx(std::istream &is, CsrMatrix<E, DataHost> *matrix)$/;"	f	language:C++
+row	/home/gflegar/repos/data-mining/include/matrix.h	/^    int row;$/;"	m	language:C++	struct:__anon1::coord
+rows	/home/gflegar/repos/data-mining/include/matrix.h	/^    int rows() const { return n_rows; }$/;"	f	language:C++	struct:CsrMatrix
+row_ptr	/home/gflegar/repos/data-mining/include/matrix.h	/^    Array<int, location> row_ptr;$/;"	m	language:C++	struct:CsrMatrix
+size	/home/gflegar/repos/data-mining/include/matrix.h	/^    int size;$/;"	m	language:C++	struct:Array
+strip_comments	/home/gflegar/repos/data-mining/include/matrix.h	/^void strip_comments(std::istream &is)$/;"	f	language:C++	namespace:__anon1
+val	/home/gflegar/repos/data-mining/include/matrix.h	/^    Array<E, location> val;$/;"	m	language:C++	struct:CsrMatrix
+val	/home/gflegar/repos/data-mining/include/matrix.h	/^    E val;$/;"	m	language:C++	struct:__anon1::coord
+~Array	/home/gflegar/repos/data-mining/include/matrix.h	/^    ~Array() { destroy(); }$/;"	f	language:C++	struct:Array

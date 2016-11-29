@@ -142,7 +142,7 @@ void get_pagerank_vector_arnoldi(
         Array<real, DataHost> *v, real tol, int max_iter)
 {
     scale_matrix(A);
-    std::cout << "A = [\n" << *A << "];" << std::endl;
+    //std::cout << "A = [\n" << *A << "];" << std::endl;
     Array<real, DataDev> dv = *v;
     real zero = 0.0, one = 1.0;
     int ldh = k+1;
@@ -180,12 +180,12 @@ void get_pagerank_vector_arnoldi(
         CHECK(cublasSetVector(tk, sizeof(real), H.data+tk-1, ldh, x.data, 1));
         CHECK(cublasDgemv(ctx.cublas, CUBLAS_OP_N, dv.size, tk, &one, Q.data,
                           dv.size, x.data, 1, &zero, dv.data, 1));
-        std::cout << "Q  = [\n" << Q << "]; " << std::endl;
-        std::cout << "S  = [\n" << S << "]; " << std::endl;
-        std::cout << "VT = [\n" << H << "]; " << std::endl;
-        std::cout << "x  = [\n" << x << "]; " << std::endl;
-        std::cout << "v  = [\n" << dv << "]; " << std::endl;
-        std::cout << "iter = " << i+1 << "; err = " << S[tk-1] << std::endl;
+        //std::cout << "Q  = [\n" << Q << "]; " << std::endl;
+        //std::cout << "S  = [\n" << S << "]; " << std::endl;
+        //std::cout << "VT = [\n" << H << "]; " << std::endl;
+        //std::cout << "x  = [\n" << x << "]; " << std::endl;
+        //std::cout << "v  = [\n" << dv << "]; " << std::endl;
+        //std::cout << "iter = " << i+1 << "; err = " << S[tk-1] << std::endl;
         if (S[tk-1] < tol) break;
     }
     *v = dv;

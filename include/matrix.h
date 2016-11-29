@@ -178,7 +178,8 @@ void read_mtx(std::istream &is, CsrMatrix<E, DataHost> *matrix)
     is >> rows >> cols >> nzeros;
     std::vector<coord<E>> data(nzeros);
     for (int i = 0; i < nzeros; ++i) {
-        is >> data[i].row >> data[i].col >> data[i].val;
+        is >> data[i].col >> data[i].row;
+        data[i].val = 1;
         --data[i].row;
         --data[i].col;
     }
