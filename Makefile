@@ -1,5 +1,5 @@
 NVCC=nvcc
-NVCCFLAGS=-std=c++11 -O3
+NVCCFLAGS=-std=c++11 -O3 -DDEBUG
 
 INCLUDE= \
 	include/constants.h	\
