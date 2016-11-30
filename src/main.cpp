@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
                 ctx, &A, args.alpha, &x, args.tol, args.max_iters);
     }
 
-    std::cout << "x = [\n" << x << "];" << std::endl;
+    //std::cout << "x = [\n" << x << "];" << std::endl;
 
     ctx.destroy();
     return 0;

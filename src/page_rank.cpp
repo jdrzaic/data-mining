@@ -109,7 +109,7 @@ void get_pagerank_vector_power(
         Array<real, DataHost> *v, real tol, int max_iter)
 {
     scale_matrix(A);
-    std::cout << "A = [\n" << *A << "];" << std::endl;
+    //std::cout << "A = [\n" << *A << "];" << std::endl;
     int n = v->size;
     Array<real, DataDev> dv = *v;
     Array<real, DataDev> y;
@@ -131,7 +131,7 @@ void get_pagerank_vector_power(
         CHECK(cublasDcopy(ctx.cublas, n, y.data, 1, dv.data, 1));
         scal = 1.0 / nrm;
         CHECK(cublasDscal(ctx.cublas, n, &scal, dv.data, 1));
-        std::cout << "v = [\n" << dv << "];" << std::endl;
+        //std::cout << "v = [\n" << dv << "];" << std::endl;
     }
     *v = dv;
 }
@@ -185,7 +185,7 @@ void get_pagerank_vector_arnoldi(
         //std::cout << "VT = [\n" << H << "]; " << std::endl;
         //std::cout << "x  = [\n" << x << "]; " << std::endl;
         //std::cout << "v  = [\n" << dv << "]; " << std::endl;
-        //std::cout << "iter = " << i+1 << "; err = " << S[tk-1] << std::endl;
+        std::cout << "iter = " << i+1 << "; err = " << S[tk-1] << std::endl;
         if (S[tk-1] < tol) break;
     }
     *v = dv;
